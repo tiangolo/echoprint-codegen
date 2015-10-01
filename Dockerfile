@@ -9,6 +9,9 @@ RUN echo "deb http://www.deb-multimedia.org stable main non-free" >> /etc/apt/so
     apt-get update && \
     apt-get install -y ffmpeg make g++ libboost1.55-dev zlib1g-dev libtag1-dev
 
+RUN apt-get install -y python-dev python-pip
+RUN pip install flask
+
 COPY ./ $ECHOPRINT_PATH/echoprint-codegen/
 
 WORKDIR $ECHOPRINT_PATH/echoprint-codegen/src
