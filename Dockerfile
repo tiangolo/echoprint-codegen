@@ -17,3 +17,7 @@ COPY ./ $ECHOPRINT_PATH/echoprint-codegen/
 WORKDIR $ECHOPRINT_PATH/echoprint-codegen/src
 RUN make && \
     ln -s $ECHOPRINT_PATH/echoprint-codegen/echoprint-codegen /usr/local/bin
+
+EXPOSE 80
+
+CMD ["python", "/opt/echoprint/echoprint-codegen/api/api.py"]
